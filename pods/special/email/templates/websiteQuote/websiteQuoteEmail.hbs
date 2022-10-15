@@ -1,0 +1,113 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <style>
+            .center { display: block; margin-left: auto; margin-right: auto; width: 95px; height: 95px; } .body-heading { text-align: center; } h1, h2
+            { color: red; } .button { border-radius: 2px; } .button a { padding: 8px 12px; border: 1px solid #ffc107; border-radius: 2px; font-family:
+            Arial, Helvetica, sans-serif; font-size: 14px; color: #1e56a0; text-decoration: none; font-weight: bold; display: inline-block; } table,
+            td, th { border: 1px solid; padding: 15px; text-align: center; } table { border-collapse: collapse; }
+        </style>
+    </head>
+    <body>
+        <div class="body-heading">
+            <img src="http://app.high-view-studios.co.uk/HighViewStudios/templates/logo.jpg" class="center" />
+            <h1><strong>High-View Studios</strong></h1>
+        </div>
+
+        <p>Dear High-View Studios,</p>
+        <p>You have recieved a new Website Quote</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Catergory</th>
+                    <th>Item</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hosting Type</td>
+                    <td>{{hostingTypesItem}}</td>
+                    <td>£{{hostingTypesUnitPrice}}</td>
+                    <td>{{hostingTypesQuantity}}</td>
+                    <td>£{{hostingTypesPrice}}</td>
+                </tr>
+                <tr>
+                    <td>Setup Fee</td>
+                    <td>{{setupItem}}</td>
+                    <td>£{{setupUnitPrice}}</td>
+                    <td>{{setupQuantity}}</td>
+                    <td>£{{setupPrice}}</td>
+                </tr>
+                <tr>
+                    <td>Domain Name</td>
+                    <td>{{domainNameItem}}</td>
+                    <td>£{{domainNameUnitPrice}}</td>
+                    <td>{{domainNameQuantity}}</td>
+                    <td>£{{domainNamePrice}}</td>
+                </tr>
+                <tr>
+                    <td>Email Accounts</td>
+                    <td>{{emailAccountsItem}}</td>
+                    <td>£{{emailAccountsMonthlyPrice}}<br />{{emailAccountsUnitPrice}}</td>
+                    <td>{{emailAccountsQuantity}}</td>
+                    <td>£{{emailAccountsPrice}}</td>
+                </tr>
+                <tr>
+                    <td>SSL Certificate</td>
+                    <td>{{sslCertItem}}</td>
+                    <td>£{{sslCertUnitPrice}}</td>
+                    <td>{{sslCertQuantity}}</td>
+                    <td>£{{sslCertPrice}}</td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>{{locationItem}}</td>
+                    <td>£{{locationUnitPrice}}</td>
+                    <td>{{locationQuantity}}</td>
+                    <td>£{{locationPrice}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <table>
+            <tr>
+                <td>Setup Total</td>
+                <td>£{{setupTotal}}</td>
+            </tr>
+            <tr>
+                <td>Yearly Total</td>
+                <td>£{{yearlyTotal}}</td>
+            </tr>
+        </table>
+        <br />
+        <strong>User's Details</strong>
+        <br />
+        <br />
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>{{detailsName}}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{detailsEmail}}</td>
+            </tr>
+            <tr>
+                <td>Additional Information</td>
+                <td>{{detailsAddInfo}}</td>
+            </tr>
+        </table>
+        <br />
+        <p>Please log into your website to approve or decline this quote.</p>
+
+        <p>Regards,</p>
+
+        <p><strong>High-View Studios</strong></p>
+    </body>
+</html>

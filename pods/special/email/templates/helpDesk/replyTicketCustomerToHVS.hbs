@@ -1,0 +1,50 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <style>
+            .center { display: block; margin-left: auto; margin-right: auto; width: 95px; height: 95px; } .body-heading { text-align: center; } h1, h2
+            { color: red; } .button { border-radius: 2px; } .button a { padding: 8px 12px; border: 1px solid #ffc107; border-radius: 2px; font-family:
+            Arial, Helvetica, sans-serif; font-size: 14px; color: #1e56a0; text-decoration: none; font-weight: bold; display: inline-block; }
+            .table-border { border: solid 1px black; border-collapse: collapse; } .cell-border { border: solid 1px black; padding: 10px; }
+        </style>
+    </head>
+    <body>
+        <div class="body-heading">
+            <img src="http://app.high-view-studios.co.uk/HighViewStudios/templates/logo.jpg" class="center" />
+            <h1><strong>High-View Studios</strong></h1>
+        </div>
+
+        <p>Dear High-View Studios,</p>
+        <p>{{name}} has replied to their ticket on ViewHelp</p>
+
+        <table class="table-border">
+            <tr>
+                <td class="cell-border"><strong>UUID:</strong></td>
+                <td class="cell-border">{{uuid}}</td>
+            </tr>
+            <tr>
+                <td class="cell-border"><strong>Reply:</strong></td>
+                <td class="cell-border">{{reply}}</td>
+            </tr>
+            <tr>
+                <td class="cell-border"><strong>Files:</strong></td>
+                <td class="cell-border">{{files}}</td>
+            </tr>
+        </table>
+        <br />
+        <p>Click the link below to reply to the ticket:</p>
+
+        <p><a
+                href="http://localhost:3000/admin-{{adminCode}}/features/pod/CPOD_VIEWHELP_ADMIN/ticket/{{uuid}}"
+                target="_blank"
+            >http://localhost:3000/admin-{{adminCode}}/features/pod/CPOD_VIEWHELP_ADMIN/ticket/{{uuid}}c</a></p>
+
+        <p><strong>DO NOT REPLY TO THIS EMAIL</strong></p>
+
+        <p>Regards,</p>
+
+        <p><strong>High-View Studios</strong></p>
+    </body>
+</html>

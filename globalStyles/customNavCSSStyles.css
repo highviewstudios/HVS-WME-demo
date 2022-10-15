@@ -1,0 +1,41 @@
+.customsCSS-navTitle {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #163172; /* accent */
+    color: white;
+}
+
+.customCSS-nav-link {
+    background-color: #1e56a0; /* primary */
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+.customCSS-nav-link:hover {
+    background-color: #d6e4f0; /* secondary */
+    color: #163172;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.customCSS-sub-nav-link {
+    background-color: #d6e4f0; /* secondary */
+    color: #163172;
+    text-align: center;
+    font-size: 1.1rem;
+    height: 40px;
+    padding-top: 10px;
+}
+
+.customCSS-sub-nav-link:hover {
+    background-color: #1e56a0; /* primary */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
