@@ -13,11 +13,11 @@ import WebsiteQuoteFrontEnd from "./websiteQuote/frontEnd/files/quoteSystem";
 function EnvironmentPodsMap(props) {
     return (
         <div>
-            {props.pod == "loginForm" && <HVSAdminLoginControl />}
-            {props.pod == "CPOD_PDFLIBRARY_ADMIN" && <PDFLibraryAdmin />}
-            {props.pod == "CPOD_PDFLIBRARY_FREND" && <PDFLibraryFrontEnd />}
-            {props.pod == "CPOD_WEBSITEQUOTE_ADMIN" && <WebsiteQuoteAdmin />}
-            {props.pod == "CPOD_WEBSITEQUOTE_FREND" && <WebsiteQuoteFrontEnd />}
+            {props.podCode == "loginForm" && <HVSAdminLoginControl />}
+            {props.podCode == "CPOD_PDFLIBRARY_ADMIN" && <PDFLibraryAdmin />}
+            {props.podCode == "CPOD_PDFLIBRARY_FREND" && <PDFLibraryFrontEnd />}
+            {props.podCode == "CPOD_WEBSITEQUOTE_ADMIN" && <WebsiteQuoteAdmin />}
+            {props.podCode == "CPOD_WEBSITEQUOTE_FREND" && <WebsiteQuoteFrontEnd />}
         </div>
     );
 }

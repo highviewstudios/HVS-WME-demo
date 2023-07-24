@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 import CenterContainer from "../../special/wholeSite/centerContainer"; //CROSS-OVER POD LINK
-
 //ACTIONS
 import * as UserActions from "../../../../store/actions/user";
 
@@ -14,7 +13,7 @@ import * as LoginControlStyles from "./styles/loginControl";
 //Image
 import logo from "../../../../administration/pods/security/images/logo.png";
 
-const { REACT_APP_KEY, REACT_APP_ADMINCODE } = process.env;
+const { REACT_APP_KEY } = process.env;
 
 function LoginControl() {
     const [showLogin, setShowLogin] = useState(false);
@@ -44,15 +43,15 @@ function LoginControl() {
     function handleImgOnClick() {
         const username = document.getElementById("username").value;
 
-        if (username === REACT_APP_KEY) {
-            Axios.post("/pods/HVSLogin/accesspass")
-                .then(() => {
-                    console.log(".");
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        }
+        const data = { username: username };
+        Axios.post("/pods/HVSLogin/accesspass", data)
+            .then((res) => {
+                const data = res.data;
+                console.log(data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     function handleKeyPress(event) {
@@ -91,7 +90,7 @@ function LoginControl() {
         Axios.post("/userLogin/auth/local/admin", data)
             .then((res) => {
                 const data = res.data;
-                console.log(data);
+                // console.log(data);
                 if (data.message === "Logged in successful") {
                     dispatch(UserActions.UpdateAuth(true));
                     dispatch(UserActions.UpdateID(data.user.id));
@@ -101,13 +100,13 @@ function LoginControl() {
                     dispatch(UserActions.UpdateNew(data.user.new == "true"));
                     dispatch(UserActions.UpdateRequestedPassword(data.user.requestedPassword == "true"));
                     setMessage("");
-                    console.log(data.user.new);
+
                     if (data.user.new === "true") {
-                        navigate(`/admin-${REACT_APP_ADMINCODE}/security/newPassword`);
+                        navigate(`/admin-${data.adminCode}/security/newPassword`);
                     } else if (data.user.requestedPassword === "true") {
-                        navigate(`/admin-${REACT_APP_ADMINCODE}/security/changePassword`);
+                        navigate(`/admin-${data.adminCode}/security/changePassword`);
                     } else {
-                        navigate(`/admin-${REACT_APP_ADMINCODE}/overview`);
+                        navigate(`/admin-${data.adminCode}/overview`);
                     }
                 } else {
                     setMessage(data.info);
